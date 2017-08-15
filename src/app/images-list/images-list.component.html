@@ -1,0 +1,24 @@
+<div class="wrapper">
+	<h1>Firebase Images Gallery With Infinite Scroll</h1>
+
+	<div *ngFor="let image of images | async">
+		<h2>{{ image?.name }}</h2>
+		<img src="{{ image?.url }}">
+	</div>
+
+	<div
+		infiniteScroll
+		[infiniteScrollDistance]="2"
+		[infiniteScrollThrottle]="3000"
+		(scrolled)="onScroll()"
+	>	
+	</div>
+
+	<div *ngIf="!finished">
+		Loading Images
+	</div>
+
+	<div *ngIf="finished">
+		All images are loaded. Nothing else is in database.
+	</div>
+</div>

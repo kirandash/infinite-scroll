@@ -1,0 +1,9 @@
+img {
+	max-width: 500px;
+	margin: 0 auto;
+	border: 10px solid #000;
+}
+
+div {
+	text-align: center;
+}
